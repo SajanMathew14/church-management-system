@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { supabase, apiClient } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
+import type { User } from '@supabase/supabase-js'
 
 interface DashboardStats {
   totalMembers: number
@@ -12,7 +13,7 @@ interface DashboardStats {
 }
 
 export default function Dashboard() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [stats, setStats] = useState<DashboardStats | null>(null)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
