@@ -12,8 +12,9 @@ export interface AuthenticatedRequest extends Request {
   params: any;
   query: any;
   body: any;
-  file?: Express.Multer.File | undefined;
-  files?: Express.Multer.File[] | { [fieldname: string]: Express.Multer.File[] } | undefined;
+  headers: any;
+  file?: any;
+  files?: any;
 }
 
 export const authenticateToken = async (
