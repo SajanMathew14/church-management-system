@@ -8,6 +8,12 @@ export interface AuthenticatedRequest extends Request {
     email: string;
     role: 'admin' | 'member' | 'group_leader';
   };
+  // Explicitly define Express properties for better TypeScript compatibility
+  params: any;
+  query: any;
+  body: any;
+  file?: Express.Multer.File | undefined;
+  files?: Express.Multer.File[] | { [fieldname: string]: Express.Multer.File[] } | undefined;
 }
 
 export const authenticateToken = async (

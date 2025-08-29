@@ -1,4 +1,4 @@
-import { Router, Response } from 'express';
+import { Router, Response, Request } from 'express';
 import { body, validationResult, query } from 'express-validator';
 import { supabase } from '../services/supabase';
 import { authenticateToken, requireAdmin, AuthenticatedRequest } from '../middleware/auth';
